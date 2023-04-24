@@ -9,13 +9,11 @@ struct ContentView: View {
                 .baselineOffset(1000)
                 .font(.system(size: 36))
             }
-        HStack{
-            Button("List View"){
+        VStack{
+            NavigationLink("List View"){
                 ListView()
             }
-            Button("Calender"){
-                CalendarView()
-            }
+           
         }
     }
 }
