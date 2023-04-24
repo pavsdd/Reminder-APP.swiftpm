@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-    
-    Text("Hi")
-    }
+        VStack{
+                   NavigationLink("add item"){
+                       ListCreation()
+                   }
 }
 
