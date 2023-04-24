@@ -15,5 +15,11 @@ struct ContentView: View {
             }
            
         }
+        VStack{
+            NavigationLink("Calendar View"){
+                CalendarView()
+            }
+           
+        }
     }
 }
