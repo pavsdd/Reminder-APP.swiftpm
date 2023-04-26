@@ -10,9 +10,11 @@ import SwiftUI
 struct taskView: View {
     @State var currentTask: taskDescription
     var body: some View {
-        VStack {
+        VStack{
             Text(currentTask.name)
 //            Text(currentTask.priority)
         }
     }
 }
+
+
