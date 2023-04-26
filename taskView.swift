@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct taskView: View {
+    @State var currentTask: taskDescription
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(currentTask.name)
+       //     Text(currentTask.priority)
+        }
     }
 }
 
-}
+
