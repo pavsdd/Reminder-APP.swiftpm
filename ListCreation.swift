@@ -8,13 +8,16 @@
 import Foundation
 
 import SwiftUI
-
 struct ListCreation: View {
+    @Binding var tasks: [taskDescription]
+    @State var newTask: String = ""
+    @State var description: String = ""
     var body: some View {
         VStack{
             Text("Enter Name")
-            
-            Text("Priority Level")
+            TextField("Task Name", value: $newTask)
+            Text("Enter Description")
+            TextField("Description", value: $description)
             HStack{
                 Button(){
                     

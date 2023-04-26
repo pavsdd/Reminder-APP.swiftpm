@@ -9,6 +9,6 @@ import SwiftUI
 
 struct taskDescription: Hashable {
     var name: String
-    var priority: Int
+    var description: String
 }
 
