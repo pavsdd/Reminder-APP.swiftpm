@@ -10,9 +10,11 @@ import Foundation
 import SwiftUI
 
 struct ListCreation: View {
+
     var body: some View {
         VStack{
             Text("Enter Name")
+           
             
             Text("Priority Level")
             HStack{

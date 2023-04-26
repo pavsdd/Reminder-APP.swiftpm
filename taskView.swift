@@ -12,7 +12,7 @@ struct taskView: View {
     var body: some View {
         VStack {
             Text(currentTask.name)
-            Text(currentTask.priority)
+//            Text(currentTask.priority)
         }
     }
 }
