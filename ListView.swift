@@ -12,7 +12,7 @@ struct ListView: View {
         VStack{
             Text("Tasks")
             NavigationLink("add item"){
-                ListCreation()
+                ListCreation(tasks: $tasks)
             }
             List(tasks, id: \.self) { currentTask in
                 taskView(currentTask: currentTask)
