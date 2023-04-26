@@ -10,8 +10,7 @@ import Foundation
 import SwiftUI
 
 struct ListCreation: View {
-    var itemname = ""
     var body: some View {
-       
+       Text("enter name")
     }
 }

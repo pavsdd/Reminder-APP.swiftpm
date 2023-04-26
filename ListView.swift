@@ -10,8 +10,10 @@ import SwiftUI
 struct ListView: View {
     var body: some View {
         VStack{
-                   NavigationLink("add item"){
-                       ListCreation()
-                   }
+            Text("Tasks")
+            NavigationLink("add item"){
+                ListCreation()
+            }
+        }
+    }
 }
-
