@@ -11,6 +11,36 @@ import SwiftUI
 
 struct ListCreation: View {
     var body: some View {
-       Text("enter name")
+        VStack{
+            Text("Enter Name")
+            
+            Text("Priority Level")
+            HStack{
+                Button(){
+                    
+                }label: {
+                    Rectangle()
+                        .size(width: 100, height: 100)
+                        .foregroundColor(.red)
+                }
+                    
+                    Button(){
+                        
+                    }label: {
+                        Rectangle()
+                            .size(width: 100, height: 100)
+                            .foregroundColor(.yellow)
+                    }
+                        
+                        Button(){
+                            
+                        }label: {
+                            Rectangle()
+                                .size(width: 100, height: 100)
+                                .foregroundColor(.green)
+                        }
+                }
+            }
+        }
     }
-}
+
