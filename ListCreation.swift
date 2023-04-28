@@ -15,9 +15,9 @@ struct ListCreation: View {
     var body: some View {
         VStack{
             Text("Enter Name")
-            TextField("Task Name", value: $newTask)
+            TextField("Task Name", text: $newTask)
             Text("Enter Description")
-            TextField("Description", value: $description)
+            TextField("Description", text: $description)
             HStack{
                 Button(){
                     
