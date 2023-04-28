@@ -11,37 +11,24 @@ import SwiftUI
 struct ListCreation: View {
     @Binding var tasks: [taskDescription]
     @State var newTask: String = ""
-    @State var description: String = ""
+    @State var newdescription: String = ""
     var body: some View {
         VStack{
             Text("Enter Name")
-            TextField("Task Name", value: $newTask)
+            TextField("Task Name", text: $newTask)
             Text("Enter Description")
-            TextField("Description", value: $description)
+            TextField("Description", text: $newdescription)
             HStack{
-                Button(){
-                    
+                Button{
+                    let  addedTask = taskDescription(name: newTask, description: newdescription)
+                    tasks.append(addedTask)
+                    newdescription = ""
+                    newTask = ""
                 }label: {
                     Rectangle()
                         .size(width: 100, height: 100)
                         .foregroundColor(.red)
                 }
-                    
-                    Button(){
-                        
-                    }label: {
-                        Rectangle()
-                            .size(width: 100, height: 100)
-                            .foregroundColor(.yellow)
-                    }
-                        
-                        Button(){
-                            
-                        }label: {
-                            Rectangle()
-                                .size(width: 100, height: 100)
-                                .foregroundColor(.green)
-                        }
                 }
             }
         }
