@@ -11,7 +11,7 @@ struct ListView: View {
     var body: some View {
         VStack{
             Text("Tasks")
-            NavigationLink("add item"){
+            NavigationLink("Add item"){
                 ListCreation(tasks: $tasks)
             }
             List(tasks, id: \.self) { currentTask in

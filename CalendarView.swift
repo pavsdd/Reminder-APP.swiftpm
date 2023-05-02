@@ -11,7 +11,7 @@ struct CalendarView: View {
     @State var selectedDate: Date = Date()
     var body: some View {
         VStack() {
-            NavigationLink("add item"){
+            NavigationLink("Add item"){
                 CalendarCreation()
                 Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
                     .font(.system(size: 28))
