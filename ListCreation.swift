@@ -20,15 +20,17 @@ struct ListCreation: View {
             TextField("Description", text: $newdescription)
             HStack{
                 Button{
-                    let  addedTask = taskDescription(name: newTask, description: newdescription)
+                    let addedTask = taskDescription(name: newTask, description: newdescription)
                     tasks.append(addedTask)
                     newdescription = ""
                     newTask = ""
                 }label: {
-                    Rectangle()
-                        .size(width: 100, height: 100)
-                        .foregroundColor(.red)
+                    frame(width: 100, height: 100)
+                        foregroundColor(.red)
                 }
+                    NavigationLink("Go Back") {
+                        ListView()
+                    }
                 }
             }
         }
