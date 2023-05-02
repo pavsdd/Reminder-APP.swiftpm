@@ -10,7 +10,7 @@ struct ListView: View {
     @State var tasks: [taskDescription] = []
     var body: some View {
         VStack{
-            Text("Tasks")
+            Text("Task")
             NavigationLink("Add item"){
                 ListCreation(tasks: $tasks)
             }
