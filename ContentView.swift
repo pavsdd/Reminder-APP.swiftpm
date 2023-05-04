@@ -14,14 +14,17 @@ struct ContentView: View {
                 
                 NavigationLink("List"){
                     ListView()
-                        .frame(width: 50, height: 50)  .foregroundColor(.blue)
+                        .frame(width: 500, height: 85)  .background(.blue)
+                    .font(.title)
                 }
                 
                 Spacer()
                     NavigationLink("Calendar"){
                         CalendarView()
+                        .frame(width: 500, height: 50) .background(.blue)
+                        .font(.title)
                     }
-                    .frame(width: 50, height: 50) .foregroundColor(.blue)
+                    
                 Spacer()
                     
             }
