@@ -11,9 +11,16 @@ struct ListView: View {
     var body: some View {
         VStack{
             Text("Task")
-            NavigationLink("Add item"){
-                ListCreation(tasks: $tasks)
+                .font(.custom("chalkboard", size: 40))
+                .foregroundColor(.red)
+            NavigationLink { 
+                 ListCreation(tasks: $tasks)
+            } label: { 
+                 Text("Add Item")
+                    .font(.custom("chalkboard", size: 40))
+                    .foregroundColor(.red)
             }
+
             List(tasks, id: \.self) { currentTask in
                 taskView(currentTask: currentTask)
             }

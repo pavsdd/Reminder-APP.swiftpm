@@ -11,23 +11,20 @@ struct CalendarView: View {
     @State var selectedDate: Date = Date()
     var body: some View {
         VStack() {
-            NavigationLink("Add item"){
+            NavigationLink {
                 CalendarCreation()
                 Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.system(size: 28))
-                    .bold()
-                    .foregroundColor(Color.accentColor)
-                    .padding()
-                    .animation(.spring(), value: selectedDate)
-                    .frame(width: 500)
-                Divider().frame(height: 1)
-                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
-                    .padding(.horizontal)
-                    .datePickerStyle(.graphical)
-                Divider()
-                
+            } label: {
+                Text("Add Item")
+                    .font(.custom("chalkboard", size: 40))
+                    .foregroundColor(.red)
             }
-            .padding(.vertical, 100)
+            Divider().frame(height: 1)
+            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                .padding(.horizontal)
+                .datePickerStyle(.graphical)
+            Divider()
+            
         }
     }
 }
