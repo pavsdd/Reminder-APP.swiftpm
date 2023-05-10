@@ -5,9 +5,9 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 Text("Reminder App")
-                    .font(.custom("chalkboard", size: 30))
-                    .frame(width: 200, height: 75)
-                    .foregroundColor(.blue)
+                    .font(.custom("chalkboard", size: 50))
+                    .frame(width: 300, height: 75)
+                    .foregroundColor(.purple)
                 Spacer()
                 
                 NavigationLink {
@@ -15,7 +15,7 @@ struct ContentView: View {
                 } label: {
                     Text("List")
                         .frame(width: 100, height: 100)
-                    .font(.custom("chalkboard", size: 30))
+                    .font(.custom("chalkboard", size: 45))
                     .foregroundColor(.red)
                 }
 
@@ -27,7 +27,7 @@ struct ContentView: View {
                 } label: {
                     Text("Calendar")
                         .frame(width: 200, height: 100)
-                    .font(.custom("chalkboard", size: 30))
+                    .font(.custom("chalkboard", size: 45))
                     .foregroundColor(.blue)
                 }
 
@@ -35,7 +35,8 @@ struct ContentView: View {
                 Spacer()
                     
             }
-           
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.yellow)
         }
     }
 }

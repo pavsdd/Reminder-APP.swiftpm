@@ -15,13 +15,15 @@ struct ListCreation: View {
     var body: some View {
         VStack{
             Text("Enter Name")
-//                .foregroundColor(.green)
+                .foregroundColor(.red)
+                .font(.custom("chalkboard", size: 25))
+
             TextField("Task Name", text: $newTask)
-//                .foregroundColor(.green)
             Text("Enter Description")
-//                .foregroundColor(.red)
+                .foregroundColor(.red)
+                .font(.custom("chalkboard", size: 25))
+
             TextField("Description", text: $newdescription)
-//                .foregroundColor(.red)
             HStack{
                 Button{
                     let addedTask = taskDescription(name: newTask, description: newdescription)
@@ -30,10 +32,10 @@ struct ListCreation: View {
                     newTask = ""
                 }label: {
                     Text("Done")
-                        .foregroundColor(.red)
+                        .foregroundColor(.green)
+                        .font(.custom("chalkboard", size: 25))
+
                 }
-                
-                
             }
         }
     }

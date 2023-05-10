@@ -26,5 +26,7 @@ struct ListView: View {
                 taskView(currentTask: currentTask)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.yellow)
     }
 }

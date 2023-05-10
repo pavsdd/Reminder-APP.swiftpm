@@ -11,8 +11,8 @@ struct taskView: View {
     @State var currentTask: taskDescription
     var body: some View {
         VStack{
-            Text(currentTask.name)
-            Text(currentTask.description)
+            Text("Task: \(currentTask.name)")
+            Text("Description: \(currentTask.description)")
         }
     }
 }
