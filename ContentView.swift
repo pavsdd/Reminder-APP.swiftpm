@@ -1,5 +1,5 @@
 import SwiftUI
-
+import UserNotifications
 struct ContentView: View {
     var body: some View {
         NavigationView{
@@ -15,10 +15,10 @@ struct ContentView: View {
                 } label: {
                     Text("List")
                         .frame(width: 100, height: 100)
-                    .font(.custom("chalkboard", size: 45))
-                    .foregroundColor(.red)
+                        .font(.custom("chalkboard", size: 45))
+                        .foregroundColor(.red)
                 }
-
+                
                 
                 Spacer()
                 
@@ -27,16 +27,26 @@ struct ContentView: View {
                 } label: {
                     Text("Calendar")
                         .frame(width: 200, height: 100)
-                    .font(.custom("chalkboard", size: 45))
-                    .foregroundColor(.blue)
+                        .font(.custom("chalkboard", size: 45))
+                        .foregroundColor(.blue)
                 }
-
-                    
+                
+                
                 Spacer()
-                    
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.yellow)
+        }
+        VStack {
+            Button("Request Permission"){
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {success, error in if success {
+                    print("All set!")
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+                }
+            }
         }
     }
 }
