@@ -17,7 +17,7 @@ struct CalendarView: View {
             } label: {
                 Text("Add Item")
                     .font(.custom("chalkboard", size: 40))
-                    .foregroundColor(.red)
+                    .foregroundColor(.blue)
             }
             Divider().frame(height: 1)
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])

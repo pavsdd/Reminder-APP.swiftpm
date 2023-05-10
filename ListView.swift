@@ -13,8 +13,9 @@ struct ListView: View {
             Text("Task")
                 .font(.custom("chalkboard", size: 40))
                 .foregroundColor(.red)
+                .underline(true, color: .red)
             NavigationLink { 
-                 ListCreation(tasks: $tasks)
+                ListCreation(tasks: $tasks)
             } label: { 
                  Text("Add Item")
                     .font(.custom("chalkboard", size: 40))

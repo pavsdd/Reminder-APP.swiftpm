@@ -29,8 +29,6 @@ struct ListCreation: View {
                     newdescription = ""
                     newTask = ""
                 }label: {
-                   Circle()
-                    frame(width: 150, height: 125)
                         foregroundColor(.red)
                 }
                 NavigationLink {
