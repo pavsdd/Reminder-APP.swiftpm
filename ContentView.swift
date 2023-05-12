@@ -2,12 +2,13 @@ import SwiftUI
 import UserNotifications
 struct ContentView: View {
     var body: some View {
-        NavigationView{
+    NavigationView{
             VStack {
                 Text("Reminder App")
                     .font(.custom("chalkboard", size: 50))
                     .frame(width: 300, height: 75)
                     .foregroundColor(.purple)
+                
                 Spacer()
                 
                 NavigationLink {
@@ -30,6 +31,26 @@ struct ContentView: View {
                         .font(.custom("chalkboard", size: 45))
                         .foregroundColor(.blue)
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink { 
+                            ListView()
+                        } label: { 
+                            Label("List", systemImage: "clipboard.fill")
+                                .foregroundColor(.blue)
+                        }
+                        
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        NavigationLink { 
+                            CalendarView()
+                        } label: { 
+                             Label("List", systemImage: "calendar.badge.clock")
+                                .foregroundColor(.red)
+                        }
+
+                    }
+                }
                 
                 
                 Spacer()
@@ -37,16 +58,14 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.yellow)
-        }
-        VStack {
-            Button("Request Permission"){
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {success, error in if success {
-                    print("All set!")
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-                }
+//        VStack {
+//            Button("Request Permission"){
+//                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {success, error in if success {
+//                    print("All set!")
+//                } else if let error = error {
+//                    print(error.localizedDescription)
+//                }
+//                }
             }
         }
     }
-}
