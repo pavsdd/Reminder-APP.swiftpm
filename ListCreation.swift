@@ -19,11 +19,15 @@ struct ListCreation: View {
                 .font(.custom("chalkboard", size: 25))
 
             TextField("Task Name", text: $newTask)
+            
+                .textFieldStyle(.roundedBorder)
+            
             Text("Enter Description")
                 .foregroundColor(.red)
                 .font(.custom("chalkboard", size: 25))
 
             TextField("Description", text: $newdescription)
+                .textFieldStyle(.roundedBorder)
             HStack{
                 Button{
                     let addedTask = taskDescription(name: newTask, description: newdescription)
