@@ -19,11 +19,13 @@ struct CalendarView: View {
                     .font(.custom("chalkboard", size: 40))
                     .foregroundColor(.blue)
             }
+            
             Divider().frame(height: 1)
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
             Divider()
+            
             
                 
         }
