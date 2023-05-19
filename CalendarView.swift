@@ -8,23 +8,27 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State var selectedDate: Date = Date()
+    @State var selectedDate = Date()
+    @State var events: [EventDescription] = []
+
+@State var Date1: Date
+    
     var body: some View {
-        VStack() {
-            NavigationLink {
-                CalendarCreation()
-                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-            } label: {
-                Text("Add Item")
-                    .font(.custom("chalkboard", size: 40))
-                    .foregroundColor(.blue)
+        VStack{
+            NavigationLink("Add Event"){
+                CalendarCreation(Date1:Date1, events:$events)
             }
+                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
+            
             Divider().frame(height: 1)
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
             Divider()
-            
+            if selectedDate == Date1{
+                Text("\(events[0].name)")
+            }
         }
     }
+    
 }
