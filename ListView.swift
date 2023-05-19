@@ -17,11 +17,11 @@ struct ListView: View {
             NavigationLink { 
                 ListCreation(tasks: $tasks)
             } label: { 
-                 Text("Add Item")
+                Text("Add Item")
                     .font(.custom("chalkboard", size: 40))
                     .foregroundColor(.red)
             }
-
+            
             List(tasks, id: \.self) { currentTask in
                 taskView(currentTask: currentTask)
             }

@@ -15,13 +15,19 @@ struct ListCreation: View {
     var body: some View {
         VStack{
             Text("Enter Name")
-//                .foregroundColor(.green)
+                .foregroundColor(.red)
+                .font(.custom("chalkboard", size: 25))
+
             TextField("Task Name", text: $newTask)
-//                .foregroundColor(.green)
+            
+                .textFieldStyle(.roundedBorder)
+            
             Text("Enter Description")
-//                .foregroundColor(.red)
+                .foregroundColor(.red)
+                .font(.custom("chalkboard", size: 25))
+
             TextField("Description", text: $newdescription)
-//                .foregroundColor(.red)
+                .textFieldStyle(.roundedBorder)
             HStack{
                 Button{
                     let addedTask = taskDescription(name: newTask, description: newdescription)
@@ -30,12 +36,33 @@ struct ListCreation: View {
                     newTask = ""
                 }label: {
                     Text("Done")
-                        .foregroundColor(.red)
+                        .foregroundColor(.blue)
+                        .font(.custom("chalkboard", size: 25))
+
                 }
-                
-                
             }
         }
+        Text("")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    NavigationLink { 
+                        ListView()
+                    } label: { 
+                        Label("List", systemImage: "clipboard.fill")
+                            .foregroundColor(.blue)
+                    }
+                    
+                }
+                ToolbarItem(placement: .bottomBar){
+                    NavigationLink { 
+                        CalendarView()
+                    } label: { 
+                        Label("List", systemImage: "calendar.badge.clock")
+                            .foregroundColor(.red)
+                    }
+                    
+                }
+            }
     }
 }
 
