@@ -19,10 +19,7 @@ struct CalendarView: View {
                 CalendarCreation(Date1:Date1, events:$events)
             }
                 Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-            } label: {
-                Text("Add Item")
-                    .font(.custom("chalkboard", size: 40))
-                    .foregroundColor(.blue)
+          
             }
             
             Divider().frame(height: 1)
@@ -30,10 +27,10 @@ struct CalendarView: View {
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
             Divider()
-            if selectedDate == Date1{
+        if selectedDate == Date1{
                 Text("\(events[0].name)")
             }
         }
     }
     
-}
+

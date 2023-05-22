@@ -12,6 +12,8 @@ struct taskView: View {
     var body: some View {
         VStack{
             Text("Task: \(currentTask.name)")
+                .bold()
+                .font(.largeTitle)
             Text("Description: \(currentTask.description)")
         }
     }

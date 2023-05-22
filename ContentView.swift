@@ -1,6 +1,7 @@
 import SwiftUI
 import UserNotifications
 struct ContentView: View {
+    @State var Date1 = Date()
     var body: some View {
     NavigationView{
             VStack {
@@ -24,7 +25,7 @@ struct ContentView: View {
                 Spacer()
                 
                 NavigationLink {
-                    CalendarView()
+                    CalendarView(Date1:Date1)
                 } label: {
                     Text("Calendar")
                         .frame(width: 200, height: 100)
@@ -32,19 +33,11 @@ struct ContentView: View {
                         .foregroundColor(.blue)
                 }
                 Text("")
-                    .toolbar {
-                        ToolbarItem(placement: .bottomBar) {
-                            NavigationLink { 
-                                ListView()
-                            } label: { 
-                                Label("List", systemImage: "clipboard.fill")
-                                    .foregroundColor(.blue)
-                            }
+                  
                             
-                        }
-                        ToolbarItem(placement: .bottomBar){
+                        
                             NavigationLink { 
-                                CalendarView()
+                                CalendarView(Date1:Date1)
                             } label: { 
                                 Label("List", systemImage: "calendar.badge.clock")
                                     .foregroundColor(.red)
@@ -52,12 +45,11 @@ struct ContentView: View {
                             
                         }
                     }
-                
+    .navigationViewStyle(.stack)
                 
                 Spacer()
                 
             }
             }
-    .navigationViewStyle(.stack)
-        }
-    }
+  
+      
