@@ -15,14 +15,16 @@ struct ListCreation: View {
         VStack{
             Text("Enter Name")
       .font(.custom("chalkboard", size: 30))
-            TextField("Task Name", text: $newTask)
+            TextField("Enter Task Name...", text: $newTask)
                 .textFieldStyle(.roundedBorder)
-            .frame(width: 350, height: 20, alignment: .center)
+            .frame(width: 350, height: 80, alignment: .center)
+            Spacer()
             Text("Enter Description")
              .font(.custom("chalkboard", size: 30))
-            TextField("Description", text: $newdescription)
+            TextField("Enter Task Description...", text: $newdescription)
             .textFieldStyle(.roundedBorder)
-            .frame(width: 350, height: 20, alignment: .center)
+            .frame(width: 350, height: 80, alignment: .center)
+            Spacer()
             HStack{
                 Button{
                     let addedTask = taskDescription(name: newTask, description: newdescription)
@@ -31,8 +33,8 @@ struct ListCreation: View {
                     newTask = ""
                 }label: {
                     Text("Done")
-                        .frame(width: 175
-                               , height: 75)
+                        .frame(width: 350
+                               , height: 60)
                         .font(.custom("chalkboard", size: 30))
                         .background(.red)
                         .foregroundColor(.white)
