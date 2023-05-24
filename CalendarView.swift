@@ -15,23 +15,35 @@ struct CalendarView: View {
     
     var body: some View {
         VStack{
+ 
+                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
+            .font(.custom("chalkboard", size: 30))
+            Divider().frame(height: 1)
+            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                .font(.custom("chalkboard", size: 30))
+               
+                .padding(.horizontal)
+                .datePickerStyle(.graphical)
+            Divider()
+            if selectedDate == Date1{
+                Text("\(events[0].name)")
+            }
+
+            Spacer()
+            
             NavigationLink("Add Event"){
                 CalendarCreation(Date1:Date1, events:$events)
             }
-            Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-        
-            
-            Divider().frame(height: 1)
-            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
-                .padding(.horizontal)
-                .datePickerStyle(.graphical)
-                .foregroundColor(.indigo)
-            Divider()
-            if selectedDate.formatted() == Date1.formatted(){
-                    Text("\(events[0].name)")
-                }
-            }
+            .frame(width: 250
+                   , height: 75)
+            .font(.custom("chalkboard", size: 30))
+            .background(.blue)
+            .foregroundColor(.white)
+            .padding()
         }
     }
     
+}
+
+
 
