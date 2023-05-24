@@ -26,6 +26,7 @@ struct CalendarView: View {
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
+                .foregroundColor(.indigo)
             Divider()
         if selectedDate == Date1{
                 Text("\(events[0].name)")
