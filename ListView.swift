@@ -7,8 +7,7 @@ struct ListView: View {
             Text("Tasks")
                 .font(.custom("chalkboard", size: 40))
                 .frame(width: 200, height: 50)
-         
-            
+            Divider()
                        
                 Spacer()
                 
@@ -26,7 +25,7 @@ struct ListView: View {
                         .foregroundColor(.white)
                     
                 }
-                
+                .padding()
                 
             }
            }

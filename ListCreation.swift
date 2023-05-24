@@ -4,7 +4,6 @@
 //
 //  Created by Ben Wojtowicz on 4/24/23.
 //
-
 import Foundation
 
 import SwiftUI
@@ -15,19 +14,15 @@ struct ListCreation: View {
     var body: some View {
         VStack{
             Text("Enter Name")
-                .foregroundColor(.red)
-                .font(.custom("chalkboard", size: 25))
-            
+      .font(.custom("chalkboard", size: 30))
             TextField("Task Name", text: $newTask)
-            
                 .textFieldStyle(.roundedBorder)
-            
+            .frame(width: 350, height: 20, alignment: .center)
             Text("Enter Description")
-                .foregroundColor(.red)
-                .font(.custom("chalkboard", size: 25))
-            
+             .font(.custom("chalkboard", size: 30))
             TextField("Description", text: $newdescription)
-                .textFieldStyle(.roundedBorder)
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 350, height: 20, alignment: .center)
             HStack{
                 Button{
                     let addedTask = taskDescription(name: newTask, description: newdescription)
@@ -36,13 +31,17 @@ struct ListCreation: View {
                     newTask = ""
                 }label: {
                     Text("Done")
-                        .foregroundColor(.blue)
-                        .font(.custom("chalkboard", size: 25))
+                        .frame(width: 175
+                               , height: 75)
+                        .font(.custom("chalkboard", size: 30))
+                        .background(.red)
+                        .foregroundColor(.white)
                     
                 }
+                
+                
             }
         }
-        
-        
     }
 }
+
