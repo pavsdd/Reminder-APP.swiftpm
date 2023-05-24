@@ -17,7 +17,7 @@ struct ListCreation: View {
             Text("Enter Name")
                 .foregroundColor(.red)
                 .font(.custom("chalkboard", size: 25))
-
+            
             TextField("Task Name", text: $newTask)
             
                 .textFieldStyle(.roundedBorder)
@@ -25,7 +25,7 @@ struct ListCreation: View {
             Text("Enter Description")
                 .foregroundColor(.red)
                 .font(.custom("chalkboard", size: 25))
-
+            
             TextField("Description", text: $newdescription)
                 .textFieldStyle(.roundedBorder)
             HStack{
@@ -38,31 +38,11 @@ struct ListCreation: View {
                     Text("Done")
                         .foregroundColor(.blue)
                         .font(.custom("chalkboard", size: 25))
-
+                    
                 }
             }
         }
-        Text("")
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    NavigationLink { 
-                        ListView()
-                    } label: { 
-                        Label("List", systemImage: "clipboard.fill")
-                            .foregroundColor(.blue)
-                    }
-                    
-                }
-                ToolbarItem(placement: .bottomBar){
-                    NavigationLink { 
-                        CalendarView()
-                    } label: { 
-                        Label("List", systemImage: "calendar.badge.clock")
-                            .foregroundColor(.red)
-                    }
-                    
-                }
-            }
+        
+        
     }
 }
-
