@@ -18,22 +18,18 @@ struct CalendarView: View {
             NavigationLink("Add Event"){
                 CalendarCreation(Date1:Date1, events:$events)
             }
-                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-            } label: {
-                Text("Add Item")
-                    .font(.custom("chalkboard", size: 40))
-                    .foregroundColor(.blue)
-            }
+            Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
+        
             
             Divider().frame(height: 1)
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
             Divider()
-        if selectedDate.formatted == Date1.formatted{
-                Text("\(events[0].name)")
+            if selectedDate.formatted() == Date1.formatted(){
+                    Text("\(events[0].name)")
+                }
             }
         }
     }
-    
 
