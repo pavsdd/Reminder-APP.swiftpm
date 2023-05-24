@@ -35,13 +35,33 @@ struct ContentView: View {
                         .background(.blue)
                         .foregroundColor(.white)
                 }
-                
-                
-                Spacer()
-                
+                Text("")
+                    .toolbar {
+                        ToolbarItem(placement: .bottomBar) {
+                            NavigationLink { 
+                                ListView()
+                            } label: { 
+                                Label("Lists", systemImage: "square.and.pencil")
+                            }
+                            
+                        }
+                        ToolbarItem(placement: .bottomBar) {
+                            NavigationLink { 
+                                CalendarView (Date1: Date1)
+                            } label: { 
+                                Label("Lists", systemImage: "calendar.badge.plus")
+                            }
+                        }
+                    }
             }
             
+                
+                Spacer()
+            
+                
+            }
+        
         }
-        .navigationViewStyle(.stack)
+        
+//        .navigationViewStyle(.stack)
     }
-}
