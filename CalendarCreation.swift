@@ -16,9 +16,11 @@ struct CalendarCreation: View {
         
         VStack {
             
-            TextField("Enter Subject Name", text: $newItemName)
+            TextField("Enter Event name", text: $newItemName)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 350, height: 20, alignment: .center)
             DatePicker("Day", selection: $Date1)
-            
+            .font(.custom("chalkboard", size: 30))
             Button(action: {
                 let addedEvent = EventDescription(name: newItemName, Date2: Date1)
                 events.append(addedEvent)
@@ -27,7 +29,11 @@ struct CalendarCreation: View {
                 
             }, label: {
                 Text("Add")
-                    .font(.largeTitle)
+                    .frame(width: 250
+                           , height: 75)
+                    .font(.custom("chalkboard", size: 30))
+                    .background(.blue)
+                    .foregroundColor(.white)
                     .disabled(true)
             })
         }
