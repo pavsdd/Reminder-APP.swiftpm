@@ -1,30 +1,33 @@
-//
-//  ListView.swift
-//  Reminder APP
-//
-//  Created by Ben Wojtowicz on 4/24/23.
-//
-
 import SwiftUI
 struct ListView: View {
     @State var tasks: [taskDescription] = []
+    
     var body: some View {
         VStack{
-            Text("Task")
+            Text("Tasks")
                 .font(.custom("chalkboard", size: 40))
-                .foregroundColor(.red)
-                .underline(true, color: .red)
-            NavigationLink { 
-                ListCreation(tasks: $tasks)
-            } label: { 
-                Text("Add Item")
-                    .font(.custom("chalkboard", size: 40))
-                    .foregroundColor(.red)
-            }
+                .frame(width: 200, height: 50)
+         
             
-            List(tasks, id: \.self) { currentTask in
-                taskView(currentTask: currentTask)
+                       
+                Spacer()
+                
+            List(tasks, id: \.self) { Task in
+                taskView(currentTask: Task)
             }
-        }
-    }
+                NavigationLink {
+                    ListCreation(tasks: $tasks)
+                } label: {
+                    Text("Add Item")
+                        .frame(width: 175
+                               , height: 75)
+                        .font(.custom("chalkboard", size: 30))
+                        .background(.red)
+                        .foregroundColor(.white)
+                    
+                }
+                
+                
+            }
+           }
 }

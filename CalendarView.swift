@@ -30,10 +30,10 @@ struct CalendarView: View {
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
             Divider()
-            if selectedDate == Date1{
+        if selectedDate.formatted == Date1.formatted{
                 Text("\(events[0].name)")
             }
         }
     }
     
-}
+
