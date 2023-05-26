@@ -21,8 +21,17 @@ struct ContentView: View {
                         .background(.red)
                         .foregroundColor(.white)
                 }
+                Spacer()
                 
-                
+                ZStack{
+                   
+                Image("Clock")
+                     .clipShape(Circle(), style: FillStyle())
+                 Image("PnG")
+                     .resizable()
+                     .offset(x: 8, y: -36)
+                        .frame(width: 99, height:99)
+                }
                 Spacer()
                 
                 NavigationLink {
