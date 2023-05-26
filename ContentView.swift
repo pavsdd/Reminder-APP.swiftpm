@@ -8,7 +8,7 @@ struct ContentView: View {
                 Text("Reminder App")
                     .font(.custom("chalkboard", size: 30))
                     .frame(width: 200, height: 50)
-                    
+                    Image("Logo")
                 Spacer()
                 
                 NavigationLink {
