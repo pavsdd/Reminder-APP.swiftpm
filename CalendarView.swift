@@ -34,8 +34,8 @@ struct CalendarView: View {
             NavigationLink("Add Event"){
                 CalendarCreation(Date1:Date1, events:$events)
             }
-            .frame(width: 250
-                   , height: 75)
+            .frame(width: 230
+                   , height: 70)
             .font(.custom("chalkboard", size: 30))
             .background(.blue)
             .foregroundColor(.white)
