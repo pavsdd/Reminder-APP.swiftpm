@@ -9,6 +9,8 @@ struct ContentView: View {
                     .font(.custom("chalkboard", size: 30))
                     .frame(width: 200, height: 50)
                     Image("Logo")
+                    .resizable()
+                    .frame(width: 225, height: 225)
                 Spacer()
                 
                 NavigationLink {
