@@ -38,6 +38,7 @@ struct ListCreation: View {
                         .font(.custom("chalkboard", size: 30))
                         .background(.red)
                         .foregroundColor(.white)
+//                    Text("fix")
                     
                 }
                 
