@@ -39,6 +39,8 @@ struct CalendarCreation: View {
         }
         .padding()
         .textFieldStyle(.roundedBorder)
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.gray)
     }
+    
 }

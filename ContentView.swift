@@ -9,6 +9,7 @@ struct ContentView: View {
                 Text("Reminder App")
                     .font(.custom("chalkboard", size: 30))
                     .frame(width: 200, height: 50)
+                    .foregroundColor(.black)
                     Image("Logo")
                     .resizable()
                     .frame(width: 225, height: 225)
@@ -78,7 +79,8 @@ struct ContentView: View {
                         }
                     }
             }
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.gray)
                 
                 Spacer()
             
