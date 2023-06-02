@@ -1,5 +1,6 @@
 import SwiftUI
 struct ContentView: View {
+    @State private var isRotating = 0.0
      @Binding var events: [EventDescription]
     @State var Date1 = Date()
     var body: some View {
@@ -29,10 +30,22 @@ struct ContentView: View {
                    
                 Image("Clock")
                      .clipShape(Circle(), style: FillStyle())
-                 Image("PnG")
-                     .resizable()
-                     .offset(x: 8, y: -36)
-                        .frame(width: 99, height:99)
+                      
+                Image("PnG")
+                    .resizable()
+                    .offset(x: 8, y: -36)
+                    .frame(width: 99, height:99)
+                    .font(.system(size: 64))
+                    .rotationEffect(.degrees(isRotating))
+                    .onAppear {
+                        withAnimation(.linear(duration: 1)
+                            .speed(0.1).repeatForever(autoreverses: false)) {
+                                isRotating = 360.0
+                                }
+                        
+                      }
+            }
+                    
                 }
                 Spacer()
                 
@@ -69,10 +82,10 @@ struct ContentView: View {
                 
                 Spacer()
             
-                
+                .navigationViewStyle(.stack) 
             }
-        
+           
         }
         
-//        .navigationViewStyle(.stack)
-    }
+
+    
