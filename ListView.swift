@@ -5,8 +5,9 @@ struct ListView: View {
     var body: some View {
         VStack{
             Text("Tasks")
-                .font(.custom("chalkboard", size: 40))
-                .frame(width: 200, height: 50)
+                .font(.custom("chalkboard", size: 45))
+                .frame(width: 190, height: 40)
+                .foregroundColor(.black)
             Divider()
                        
                 Spacer()
@@ -18,9 +19,9 @@ struct ListView: View {
                     ListCreation(tasks: $tasks)
                 } label: {
                     Text("Add Item")
-                        .frame(width: 175
-                               , height: 75)
-                        .font(.custom("chalkboard", size: 30))
+                        .frame(width: 170
+                               , height: 70)
+                        .font(.custom("chalkboard", size: 25))
                         .background(.red)
                         .foregroundColor(.white)
                     
@@ -28,5 +29,7 @@ struct ListView: View {
                 .padding()
                 
             }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.gray)
            }
 }

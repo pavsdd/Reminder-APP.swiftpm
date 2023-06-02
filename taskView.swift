@@ -14,7 +14,7 @@ struct taskView: View {
                   .font(.custom("chalkboard", size: 30))
                   .bold()
             Text(currentTask.description)
-             .font(.custom("chalkboard", size: 20))
+             .font(.custom("chalkboard", size: 30))
         }
     }
 }
