@@ -12,7 +12,7 @@ struct ContentView: View {
                     .foregroundColor(.black)
                     Image("Logo")
                     .resizable()
-                    .frame(width: 225, height: 225)
+                    .frame(width: 220, height:220)
                 Spacer()
                 
                 NavigationLink {
@@ -47,7 +47,7 @@ struct ContentView: View {
                       }
             }
                     
-                }
+                
                 Spacer()
                 
                 NavigationLink {
@@ -88,6 +88,6 @@ struct ContentView: View {
             }
            
         }
-        
+}
 
     
