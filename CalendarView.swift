@@ -14,6 +14,7 @@ struct CalendarView: View {
 @State var Date1: Date
     
     var body: some View {
+        let sameDay = Calendar.current.isDate(selectedDate, equalTo: Date1, toGranularity: .day)
         VStack{
             
             Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
@@ -28,7 +29,12 @@ struct CalendarView: View {
             if selectedDate == Date1{
                 Text("\(events[0].name)")
             }
-            
+            if sameDay {
+                Text("events.name")
+            }else{
+                Text("Nothing Schedualed")
+            }
+                
             Spacer()
             
             NavigationLink("Add Event"){
