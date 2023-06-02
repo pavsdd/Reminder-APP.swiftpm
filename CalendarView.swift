@@ -30,9 +30,9 @@ struct CalendarView: View {
                 Text("\(events[0].name)")
             }
             if sameDay {
-                Text("events.name")
+                Text("")
             }else{
-                Text("Nothing Schedualed")
+                Text("Nothing schedule")
             }
                 
             Spacer()
